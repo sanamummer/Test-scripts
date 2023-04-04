@@ -1,37 +1,15 @@
-# This repo is used to Findout the average time that is required to deploy the smart contract on Ethereum Mainnet Fork created by BuildBear.io , Goerli and Sepolia Testnets
+# This repository, contains TestScripts and deployment scripts for following contracts:
+- Gameitem
+- Greeter
+- Simplestorage
+- token
+- Artwork
 
-The smart contract is deployed 10 times to get the average time of deployment.
-
-```
-   deployerAddress = account.address;
-    console.log(`Deploying contracts using ${deployerAddress}`);
-    console.time();
-    for (let i = 0; i < 10; i++) {
-        const token = await ethers.getContractFactory('Token');
-        const tokenInstance = await token.deploy(
-        );
-        await tokenInstance.deployed();
-    }
-    console.log("Time taken to deploy 10 smart contract on Buildbear  in  milliseconds");
-    console.timeEnd();
-```
-
-# Results of testing 
+# To start using this repository, simply clone it or download the zip file. Once downloaded, run `npm install` to install all the necessary packages.
 
 
-| Network   | Average time taken for contract deployment |     |     |     |
-| --------- | ------------------------------------------ | --- | --- | --- |
-| Buildbear | 3.2s                                       |     |     |     |
-| Goerli    | 2.3 Minutes                                |     |     |     |
-| Seopila   | 13.5s                                      |     |     |     |
 
-<> (This test is performed on 16-03-2023,and with network updates the deployments time may vary in the future)
+# To deploy all the contracts, run `npx hardhat run scripts/deployAll.js --network buildbear`.
 
-# commands used
+# To run all the TestScripts, use the command `npx hardhat test`.
 
-
-npx hardhat run scripts/deploy.js --network buildbear
-
-npx hardhat run scripts/deploy.js --network Sepolia
-
-npx hardhat run scripts/deploy.js --network goerli

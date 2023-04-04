@@ -11,6 +11,7 @@ async function deploy() {
     await tokenInstance.deployed();
     await run(`verify:verify`, {
         address: tokenInstance.address,
+        constructorArguments: [1000],
     });
 
 }
