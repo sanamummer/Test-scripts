@@ -7,7 +7,9 @@
 
 ### To start using this repository, simply clone it or download the zip file. Once downloaded, run `npm install` to install all the necessary packages.
 
-
+### To get your own Testnet head [builbear](https://buildbear.io/)
+- Create a Testnet on BuildBear
+- Copy the RPC and explorer link and add to the hardhat.config.js file
 
 ### To deploy all the contracts, run `npx hardhat run scripts/deployAll.js --network buildbear`.
 
