@@ -5,15 +5,14 @@ async function deploy() {
     [account] = await ethers.getSigners();
     deployerAddress = account.address;
     console.log(`Deploying contracts using ${deployerAddress}`);
-    console.time();
-    for (let i = 0; i < 10; i++) {
-        const token = await ethers.getContractFactory('Token');
-        const tokenInstance = await token.deploy(
-        );
-        await tokenInstance.deployed();
-    }
-    console.log("Time taken to deploy 10 smart contract on Goerli  in  milliseconds");
-    console.timeEnd();
+    const greeter = await ethers.getContractFactory('Greeter');
+    const greeterInstance = await greeter.deploy(
+    );
+    await greeterInstance.deployed();
+    await run(`verify:verify`, {
+        address: greeterInstance.address,
+    });
+
 }
 
 deploy()

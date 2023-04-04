@@ -1,22 +1,21 @@
-
-
-
 const { ethers } = require('hardhat');
 
 // Deploy function
-async function verify() {
+async function deploy() {
     [account] = await ethers.getSigners();
     deployerAddress = account.address;
     console.log(`Deploying contracts using ${deployerAddress}`);
-    const token = await ethers.getContractFactory('ERC20Modified');
-    const tokenInstance = await token.deploy();
-    await tokenInstance.deployed();
+    const gameitem = await ethers.getContractFactory('GameItem');
+    const gameitemInstance = await gameitem.deploy(
+    );
+    await gameitemInstance.deployed();
     await run(`verify:verify`, {
-        address: tokenInstance.address,
+        address: gameitemInstance.address,
     });
+
 }
 
-verify()
+deploy()
     .then(() => process.exit(0))
     .catch((error) => {
         console.error(error);
