@@ -9,7 +9,7 @@
 
 ### To get your own Testnet head [builbear](https://buildbear.io/)
 - Create a Testnet on BuildBear
-- Copy the RPC and explorer link and add to the hardhat.config.js file
+- Copy the RPC and explorer link from the Dashboard and add to the hardhat.config.js file
 - Copy the mnemonic from the Dashboard and add in Hardhat.config.js file 
 
 ### To deploy all the contracts, run `npx hardhat run scripts/deployAll.js --network buildbear`.
