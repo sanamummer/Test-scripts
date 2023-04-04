@@ -16,8 +16,8 @@ module.exports = {
   networks: {
     hardhat: {},
     buildbear: {
-      url: "https://rpc.dev.buildbear.io/Rubber_Dorme_33988045",
-      accounts: ["e41093dfc8b71304b22b54bc3f12e7f41a03f3d802287659c4c44777a105ff5a", "89e99b46c6fc6f6c51877defc4bc5f4d0892d56fd855eec91c07659c1817bf50"],
+      url: "https://rpc.buildbear.io/Rubber_Dorme_33988045",
+      accounts: ["private Key account  1", "private Key account 2"],
     },
 
   },
@@ -89,8 +89,8 @@ module.exports = {
         network: "buildbear",
         chainId: 1,
         urls: {
-          apiURL: "https://rpc.dev.buildbear.io/verify/etherscan/Rubber_Dorme_33988045",
-          browserURL: "https://explorer.dev.buildbear.io/Rubber_Dorme_33988045",
+          apiURL: "https://rpc.buildbear.io/verify/etherscan/Rubber_Dorme_33988045",
+          browserURL: "https://explorer.buildbear.io/Rubber_Dorme_33988045",
         },
       },
     ],
