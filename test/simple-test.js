@@ -38,4 +38,5 @@ describe("SimpleStorage", function () {
         assert.equal(name, expectedPersonName)
         assert.equal(favoriteNumber, expectedPersonNumber)
     })
+
 })

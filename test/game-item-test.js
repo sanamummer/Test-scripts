@@ -41,5 +41,10 @@ describe("GameItem Contract", function () {
         const { gameItem, addr1 } = await loadFixture(deployTokenFixture);
         await expect(gameItem.connect(addr1).awardItem(addr1.address, 'https://game.example/item-id-1.json')).to.be.revertedWith('Ownable: caller is not the owner');
     });
+    it("Should not mint if not owner", async function () {
+        const { gameItem, addr1 } = await loadFixture(deployTokenFixture);
+        await expect(gameItem.connect(addr1).awardItem(addr1.address, 'https://game.example/item-id-1.json')).to.be.revertedWith('Ownable: caller is not the owner');
+    });
+
 
 })

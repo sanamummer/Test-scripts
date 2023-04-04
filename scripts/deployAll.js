@@ -2,7 +2,7 @@ const { ethers } = require('hardhat');
 
 // Deploy function
 async function deployAll() {
-    [account] = await ethers.getSigners();
+    [account, account2] = await ethers.getSigners();
     deployerAddress = account.address;
     console.log(`Deploying contracts using ${deployerAddress}`);
     const token = await ethers.getContractFactory('Token');
@@ -44,6 +44,23 @@ async function deployAll() {
         address: artworkInstance.address,
         constructorArguments: ["Artwork Contract", "ART"],
     });
+
+    const multiSigWallet = await ethers.getContractFactory('MultiSigWallet');
+    const multiSigWalletInstance = await multiSigWallet.deploy([account.address, account2.address], 2, 1111);
+    await multiSigWalletInstance.deployed();
+    await run(`verify:verify`, {
+        address: multiSigWalletInstance.address,
+        constructorArguments: [[account.address, account2.address], 2, 1111],
+    });
+    const TestERC1155 = await ethers.getContractFactory('TestERC1155');
+    const testERC1155Instance = await TestERC1155.deploy(
+    );
+    await testERC1155Instance.deployed();
+    await run(`verify:verify`, {
+        address: testERC1155Instance.address,
+    });
+
+
 
 }
 

@@ -11,13 +11,13 @@ require('@nomiclabs/hardhat-etherscan');
 
 
 module.exports = {
-  defaultNetwork: 'buildbear',
+  defaultNetwork: 'hardhat',
 
   networks: {
     hardhat: {},
     buildbear: {
-      url: "https://rpc.buildbear.io/Rubber_Dorme_33988045",
-      accounts: ["private Key account  1", "private Key account 2"],
+      url: "https://rpc.dev.buildbear.io/Tense_Beru_Whitesun_lars_6c7f7229",
+      accounts: { mnemonic: "scene three affair crowd finish fine upper behave insane toward fall produce" },
     },
 
   },
@@ -89,8 +89,8 @@ module.exports = {
         network: "buildbear",
         chainId: 1,
         urls: {
-          apiURL: "https://rpc.buildbear.io/verify/etherscan/Rubber_Dorme_33988045",
-          browserURL: "https://explorer.buildbear.io/Rubber_Dorme_33988045",
+          apiURL: "https://rpc.dev.buildbear.io/verify/etherscan/Tense_Beru_Whitesun_lars_6c7f7229",
+          browserURL: "https://explorer.dev.buildbear.io/Tense_Beru_Whitesun_lars_6c7f7229",
         },
       },
     ],

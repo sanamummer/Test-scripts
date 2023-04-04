@@ -8,6 +8,7 @@
     "@uniswap/lib": "^4.0.1-alpha",
     "@uniswap/v2-core": "^1.0.1",
     "chai": "^4.3.7",
+    "ethereum-waffle": "^4.0.10",
     "hardhat": "^2.13"
   },
   "devDependencies": {
