@@ -16,8 +16,7 @@ module.exports = {
   networks: {
     hardhat: {},
     buildbear: {
-      url: "https://rpc.buildbear.io/Tense_Beru_Whitesun_lars_6c7f7229",
-      accounts: { mnemonic: "scene three affair crowd finish fine upper behave insane toward fall produce" },
+      url: "https://rpc.dev.buildbear.io/shivering-finis-valorum-ca8e3aee",
     },
 
   },
@@ -28,7 +27,16 @@ module.exports = {
         settings: {
           optimizer: {
             enabled: true,
-            runs: 200,
+            runs: 2000,
+          },
+        },
+      },
+      {
+        version: '0.8.0',
+        settings: {
+          optimizer: {
+            enabled: true,
+            runs: 2000,
           },
         },
       },
@@ -37,7 +45,7 @@ module.exports = {
         settings: {
           optimizer: {
             enabled: true,
-            runs: 200,
+            runs: 2000,
           },
         },
       },
@@ -46,7 +54,7 @@ module.exports = {
         settings: {
           optimizer: {
             enabled: true,
-            runs: 200,
+            runs: 2000,
           },
         },
       },
@@ -55,7 +63,7 @@ module.exports = {
         settings: {
           optimizer: {
             enabled: true,
-            runs: 200,
+            runs: 2000,
           },
         },
       },
@@ -64,7 +72,7 @@ module.exports = {
         settings: {
           optimizer: {
             enabled: true,
-            runs: 200,
+            runs: 2000,
           },
         },
       },
@@ -73,7 +81,7 @@ module.exports = {
         settings: {
           optimizer: {
             enabled: true,
-            runs: 200,
+            runs: 2000,
           },
         },
       },
@@ -87,10 +95,10 @@ module.exports = {
     customChains: [
       {
         network: "buildbear",
-        chainId: 1,
+        chainId: 43114,
         urls: {
-          apiURL: "https://rpc.buildbear.io/verify/etherscan/Tense_Beru_Whitesun_lars_6c7f7229",
-          browserURL: "https://explorer.buildbear.io/Tense_Beru_Whitesun_lars_6c7f7229",
+          apiURL: "https://rpc.dev.buildbear.io/verify/etherscan/prospective-shaak-ti-c35fdc37",
+          browserURL: "https://explorer.dev.buildbear.io/prospective-shaak-ti-c35fdc37",
         },
       },
     ],
