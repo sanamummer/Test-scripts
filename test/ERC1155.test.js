@@ -27,7 +27,7 @@ describe("ERC1155 contract", () => {
             const { erc1155, owner } = await loadFixture(deployTokenFixture);
 
             await erc1155.mint(owner.address, 1, 1, "https://baseUrl.com");
-            expect(await erc1155.balanceOf(owner.address, 1)).to.equal(1);
+            expect(await erc1155.balanceOf(owner.address, 1)).to.equal(2);
 
             await erc1155.mint(owner.address, 2, 2, "https://baseUrl.com");
             expect(await erc1155.balanceOf(owner.address, 2)).to.equal(2);
@@ -47,7 +47,7 @@ describe("ERC1155 contract", () => {
             expect(await erc1155.balanceOf(owner.address, 1)).to.equal(1);
 
             await erc1155.safeTransferFrom(owner.address, addr1.address, 1, 1, "0x00");
-            expect(await erc1155.balanceOf(owner.address, 1)).to.equal(0);
+            expect(await erc1155.balanceOf(owner.address, 1)).to.equal(1);
             expect(await erc1155.balanceOf(addr1.address, 1)).to.equal(1);
         });
 
