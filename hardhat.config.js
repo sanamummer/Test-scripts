@@ -3,112 +3,33 @@
  */
 
 require('@nomiclabs/hardhat-ethers');
-require('@nomiclabs/hardhat-etherscan');
-
-// Change private keys accordingly - ONLY FOR DEMOSTRATION PURPOSES - PLEASE STORE PRIVATE KEYS IN A SAFE PLACE
-// Export your private key as
-//       export PRIVKEY=0x.....
+require('@nomicfoundation/hardhat-verify');
 
 
 module.exports = {
-  defaultNetwork: 'buildbear',
-
+  solidity: "0.8.4",
+  defaultNetwork: "hardhat",
   networks: {
-    hardhat: {},
-    buildbear: {
-      url: "https://rpc.dev.buildbear.io/shivering-finis-valorum-ca8e3aee",
+    hardhat: {
+      // chainId: 1,
+      forking: {
+        url: "https://bsc-mainnet.infura.io/v3/2KlwTlHCZLxd6M52cJV2ICy1R70"
+      //   //hardhat node
+      //   //anvil
+          
+      },
+      buildbear: {
+        url:"https://rpc.buildbear.io/sanam",
+        account:["148333348a161dda4fdfff100827edb32758b07dbef2d732ccb1fc06c8fbb469"]
+      },
+      infura: {
+        url: "https://mainnet.infura.io/v3/879c5343f56a412a8c27c071023a8440"
+         //"https://mainnet.infura.io/v3/999f7b04821a4e28acbe1c5ddcf43baf"
+      },
+     
     },
+  
+  }
 
-  },
-  solidity: {
-    compilers: [
-      {
-        version: '0.8.16',
-        settings: {
-          optimizer: {
-            enabled: true,
-            runs: 2000,
-          },
-        },
-      },
-      {
-        version: '0.8.0',
-        settings: {
-          optimizer: {
-            enabled: true,
-            runs: 2000,
-          },
-        },
-      },
-      {
-        version: '0.8.4',
-        settings: {
-          optimizer: {
-            enabled: true,
-            runs: 2000,
-          },
-        },
-      },
-      {
-        version: '0.8.9',
-        settings: {
-          optimizer: {
-            enabled: true,
-            runs: 2000,
-          },
-        },
-      },
-      {
-        version: '0.5.0',
-        settings: {
-          optimizer: {
-            enabled: true,
-            runs: 2000,
-          },
-        },
-      },
-      {
-        version: '0.8.13',
-        settings: {
-          optimizer: {
-            enabled: true,
-            runs: 2000,
-          },
-        },
-      },
-      {
-        version: '0.5.5',
-        settings: {
-          optimizer: {
-            enabled: true,
-            runs: 2000,
-          },
-        },
-      },
-    ],
-  },
-
-  etherscan: {
-    apiKey: {
-      buildbear: "test1",
-    },
-    customChains: [
-      {
-        network: "buildbear",
-        chainId: 43114,
-        urls: {
-          apiURL: "https://rpc.dev.buildbear.io/verify/etherscan/prospective-shaak-ti-c35fdc37",
-          browserURL: "https://explorer.dev.buildbear.io/prospective-shaak-ti-c35fdc37",
-        },
-      },
-    ],
-  },
-  paths: {
-    sources: './contracts',
-    cache: './cache',
-    artifacts: './artifacts',
-  },
-  mocha: {
-    timeout: 20000000000,
-  },
-};
+  
+}
